@@ -2,7 +2,7 @@
    "name": "snowyfieldsclient",
    "version": "0.7.0",
    "description": "Desktop client for snowyfields.ca",
-   "productName": "CPPS Creator",
+   "productName": "Snowy Fields DLC",
    "main": "main.js",
    "scripts": {
       "start": "electron ."
