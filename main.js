@@ -91,14 +91,14 @@ function makeMenu() { // credits to random
     fsmenu = new Menu();
     if (process.platform == 'darwin') {
         fsmenu.append(new MenuItem({
-            label: "CPPSCreator Client",
+            label: "Snowy Fields DLC",
             submenu: [{
                     label: 'About',
                     click: () => {
                         dialog.showMessageBox({
                             type: "info",
                             buttons: ["Ok"],
-                            title: "About CPPSCreator",
+                            title: "About Snowy Fields DLC",
                             message: aboutMessage
                         });
                     }
@@ -140,7 +140,7 @@ function makeMenu() { // credits to random
                 dialog.showMessageBox({
                     type: "info",
                     buttons: ["Ok"],
-                    title: "About CPPSCreator",
+                    title: "About Snowy Fields DLC",
                     message: aboutMessage
                 });
             }
