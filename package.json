@@ -1,6 +1,6 @@
 {
    "name": "snowyfieldsclient",
-   "version": "0.7",
+   "version": "0.7.0",
    "description": "Desktop client for snowyfields.ca",
    "productName": "CPPS Creator",
    "main": "main.js",
