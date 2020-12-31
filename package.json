@@ -7,19 +7,20 @@
    "scripts": {
       "start": "electron ."
    },
-   "repository": "https://github.com/random-sb/cppscreator-client",
+   "repository": "https://github.com/random-sb/snowyfields-client",
    "keywords": [
-      "cppscreator",
+      "snowyfields",
       "cpps",
       "club penguin",
-      "club penguin private server"
+      "club penguin private server",
+      "anvura"
    ],
    "build": {
       "publish": [
          {
             "provider": "github",
             "owner": "random-sb",
-            "repo": "cppscreator-client"
+            "repo": "snowyfields-client"
          }
       ],
       "appId": "com.snowyfields.desktop",
