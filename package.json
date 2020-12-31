@@ -1,0 +1,72 @@
+{
+   "name": "snowyfieldsclient",
+   "version": "1.2.1",
+   "description": "Desktop client for snowyfields.ca",
+   "productName": "CPPS Creator",
+   "main": "main.js",
+   "scripts": {
+      "start": "electron ."
+   },
+   "repository": "https://github.com/random-sb/cppscreator-client",
+   "keywords": [
+      "cppscreator",
+      "cpps",
+      "club penguin",
+      "club penguin private server"
+   ],
+   "build": {
+      "publish": [
+         {
+            "provider": "github",
+            "owner": "random-sb",
+            "repo": "cppscreator-client"
+         }
+      ],
+      "appId": "com.snowyfields.desktop",
+      "mac": {
+         "asar": false,
+         "category": "public.app-category.games"
+      },
+      "linux": {
+         "asar": false,
+         "target": [
+            {
+               "target": "deb",
+               "arch": [
+                  "x64",
+                  "ia32"
+               ]
+            },
+            {
+               "target": "AppImage",
+               "arch": [
+                  "x64",
+                  "ia32"
+               ]
+            }
+         ]
+      },
+      "win": {
+         "asar": false,
+         "target": [
+            {
+               "target": "nsis",
+               "arch": [
+                  "x64",
+                  "ia32"
+               ]
+            }
+         ]
+      }
+   },
+   "author": "Snowy Fields (www.snowyfields.ca)",
+   "license": "CC0-1.0",
+   "devDependencies": {
+      "electron": "^8.1.1",
+      "electron-builder": "^22.9.1"
+   },
+   "dependencies": {
+      "electron-updater": "^4.3.2",
+      "discord-rpc": "^3.1.4"
+   }
+}
