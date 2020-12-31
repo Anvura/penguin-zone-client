@@ -69,18 +69,17 @@ function createWindow() {
 
 // start of menubar part
 
-const aboutMessage = `SNowy Fields Client v${app.getVersion()}\nCreated by Random with much code provided by Allinol for use with Coastal Freeze.`;
+const aboutMessage = `Snowy Fields Client v${app.getVersion()}\nCreated by Random with much code provided by Allinol for use with Coastal Freeze.`;
 
 
 function activateRPC() { 
-  const clientId = '793529837062193153'; 
+  const clientId = '794276213144944681'; 
   DiscordRPC.register(clientId);
   rpc = new DiscordRPC.Client({ transport: 'ipc' }); 
   const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
-      details: `www.cppscreator.xyz`, 
-      state: `Browsing CPPSes`, 
+      details: `www.snowyfields.ca`, 
       startTimestamp, 
       largeImageKey: `main-logo`
     });
