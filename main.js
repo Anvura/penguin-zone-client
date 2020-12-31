@@ -119,12 +119,6 @@ function makeMenu() { // credits to random
                     }
                 },
                 {
-                    label: 'Visit CPPS code...',
-                    click: () => {
-                        createPrompt();
-                    }
-                },
-                {
                     label: 'Log Out',
                     click: () => {
                         clearCache();
