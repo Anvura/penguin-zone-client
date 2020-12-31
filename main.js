@@ -65,6 +65,10 @@ function createWindow() {
     win.loadFile('index.html');
     autoUpdater.checkForUpdatesAndNotify();
     Menu.setApplicationMenu(fsmenu);
+	
+    mainWindow.on('closed', () => {
+    	mainWindow = null;
+    });
 }
 
 // start of menubar part
@@ -201,5 +205,5 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  if (win === null) {createWindow();}
+  if (win == null) {createWindow();}
 });
