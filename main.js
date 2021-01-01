@@ -52,7 +52,7 @@ app.on('ready', () => {
 function createWindow() {
     win = new BrowserWindow
     ({
-        title: "Snowy Fields Client",
+        title: "Snowy Fields",
         webPreferences: {
             plugins: true,
             nodeIntegration: true
@@ -96,7 +96,7 @@ function makeMenu() { // credits to random
     fsmenu = new Menu();
     if (process.platform == 'darwin') {
         fsmenu.append(new MenuItem({
-            label: "Snowy Fields Client",
+            label: "Snowy Fields",
             submenu: [{
                     label: 'About',
                     click: () => {
