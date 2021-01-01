@@ -60,7 +60,7 @@
          ]
       }
    },
-   "author": "Snowy Fields (www.snowyfields.ca)",
+   "author": "Snowy Fields <snowyfieldscp@gmail.com> (www.snowyfields.ca)",
    "license": "CC0-1.0",
    "devDependencies": {
       "electron": "^8.1.1",
