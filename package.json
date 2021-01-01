@@ -1,8 +1,8 @@
 {
    "name": "snowyfieldsclient",
-   "version": "0.7.1",
+   "version": "0.8.0",
    "description": "Desktop client for snowyfields.ca",
-   "productName": "Snowy Fields DLC",
+   "productName": "Snowy Fields Client",
    "main": "main.js",
    "scripts": {
       "start": "electron ."
