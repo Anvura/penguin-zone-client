@@ -68,7 +68,7 @@ function createWindow() {
     Menu.setApplicationMenu(fsmenu);
 	
     win.on('closed', () => {
-    	mainWindow = null;
+    	win = null;
     });
 }
 
