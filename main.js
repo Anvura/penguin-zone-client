@@ -51,7 +51,7 @@ app.on('ready', () => {
 function createWindow() {
     win = new BrowserWindow
     ({
-        title: "Snowy Fields DLC",
+        title: "Snowy Fields Client",
         webPreferences: {
             plugins: true,
             nodeIntegration: true
@@ -62,18 +62,18 @@ function createWindow() {
     makeMenu();
     activateRPC();
 	
-    win.loadFile('index.html');
+    win.loadURL('https://play.snowyfields.ca/');
     autoUpdater.checkForUpdatesAndNotify();
     Menu.setApplicationMenu(fsmenu);
 	
-    mainWindow.on('closed', () => {
+    win.on('closed', () => {
     	mainWindow = null;
     });
 }
 
 // start of menubar part
 
-const aboutMessage = `Snowy Fields Client v${app.getVersion()}\nCreated by Random with much code provided by Allinol for use with Coastal Freeze.`;
+const aboutMessage = `Snowy Fields Client v${app.getVersion()}\nCreated by Random with much code provided by Allinol for use with Coastal Freeze.\nThe owner of Snowy Fields is Anvura.`;
 
 
 function activateRPC() { 
@@ -95,14 +95,14 @@ function makeMenu() { // credits to random
     fsmenu = new Menu();
     if (process.platform == 'darwin') {
         fsmenu.append(new MenuItem({
-            label: "Snowy Fields DLC",
+            label: "Snowy Fields Client",
             submenu: [{
                     label: 'About',
                     click: () => {
                         dialog.showMessageBox({
                             type: "info",
                             buttons: ["Ok"],
-                            title: "About Snowy Fields DLC",
+                            title: "About Snowy Fields Client",
                             message: aboutMessage
                         });
                     }
@@ -126,7 +126,7 @@ function makeMenu() { // credits to random
                     label: 'Log Out',
                     click: () => {
                         clearCache();
-                        win.loadFile('index.html');
+                        win.loadURL('https://play.snowyfields.ca/');
                     }
                 }
             ]
@@ -138,7 +138,7 @@ function makeMenu() { // credits to random
                 dialog.showMessageBox({
                     type: "info",
                     buttons: ["Ok"],
-                    title: "About Snowy Fields DLC",
+                    title: "About Snowy Fields Client",
                     message: aboutMessage
                 });
             }
@@ -162,7 +162,7 @@ function makeMenu() { // credits to random
             label: 'Log Out',
             click: () => {
                 clearCache();
-                win.loadFile('index.html');
+                win.loadURL('https://play.snowyfields.ca/');
             }
         }));
     }
@@ -176,34 +176,61 @@ function clearCache() {
 
 // end of menubar
 
-// Auto update part
+//Auto update part
 
 autoUpdater.on('update-available', (updateInfo) => {
-    win.webContents.send('update_available', updateInfo.version);
+	updateAv = true;
+	
+	switch (process.platform) {
+	case 'win32':
+	    dialog.showMessageBox({
+		  type: "info",
+		  buttons: ["Ok"],
+		  title: "Update Available",
+		  message: "There is a new version available (v" + updateInfo.version + "). It will be installed when the app closes."
+	    });
+	    break
+	case 'darwin':
+	    dialog.showMessageBox({
+		  type: "info",
+		  buttons: ["Ok"],
+		  title: "Update Available",
+		  message: "There is a new version available (v" + updateInfo.version + "). Please go install it manually from the website."
+	    });
+	    break
+	case 'linux':
+	    dialog.showMessageBox({
+		  type: "info",
+		  buttons: ["Ok"],
+		  title: "Update Available",
+		  message: "There is a new version available (v" + updateInfo.version + "). Auto-update has not been tested on this OS, so if after relaunching app this appears again, please go install it manually."
+	    });
+	    break
+	}
+    //win.webContents.send('update_available', updateInfo.version);
 });
 
+/*
 autoUpdater.on('update-downloaded', () => {
     win.webContents.send('update-downloaded');
 });
-
 ipcMain.on('app_version', (event) => {
     event.sender.send('app_version', {
         version: app.getVersion()
     });
 });
-
 ipcMain.on('restart_app', () => {
     autoUpdater.quitAndInstall();
 });
-
-// end of Auto update part
+// end of Auto update part*/
 
 app.on('window-all-closed', () => {
+    if (updateAv) {autoUpdater.quitAndInstall();}
     if (process.platform !== 'darwin') {
         app.quit();
     }
 });
 
 app.on('activate', () => {
-  if (win == null) {createWindow();}
+  if (win === null) {createWindow();}
 });
