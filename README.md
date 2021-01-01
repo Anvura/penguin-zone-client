@@ -1,1 +1,2 @@
-# CPPS Creator CLient thing
+# Client for Snowy Fields
+*insert anvura "bruh" noises*
