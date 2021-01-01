@@ -14,6 +14,7 @@ let rpc
 const {
     autoUpdater
 } = require('electron-updater');
+let updateAv = false;
 
 const path = require('path')
 
