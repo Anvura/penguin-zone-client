@@ -180,8 +180,6 @@ function clearCache() {
 //Auto update part
 
 autoUpdater.on('update-available', (updateInfo) => {
-	updateAv = true;
-	
 	switch (process.platform) {
 	case 'win32':
 	    dialog.showMessageBox({
@@ -211,10 +209,11 @@ autoUpdater.on('update-available', (updateInfo) => {
     //win.webContents.send('update_available', updateInfo.version);
 });
 
-/*
 autoUpdater.on('update-downloaded', () => {
-    win.webContents.send('update-downloaded');
+    updateAv = true;
 });
+
+/*
 ipcMain.on('app_version', (event) => {
     event.sender.send('app_version', {
         version: app.getVersion()
@@ -226,10 +225,15 @@ ipcMain.on('restart_app', () => {
 // end of Auto update part*/
 
 app.on('window-all-closed', () => {
-    if (updateAv) {autoUpdater.quitAndInstall();}
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+	if (updateAv) {
+		autoUpdater.quitAndInstall();
+	}
+	else
+	{
+		if (process.platform !== 'darwin') {
+			app.quit();
+		}
+	}
 });
 
 app.on('activate', () => {
