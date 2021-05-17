@@ -63,7 +63,7 @@ function createWindow() {
     makeMenu();
     activateRPC();
 	
-    win.loadURL('https://play.snowyfields.ca/');
+    win.loadURL('https://snowyfields.ca/');
     autoUpdater.checkForUpdatesAndNotify();
     Menu.setApplicationMenu(fsmenu);
 	
@@ -127,7 +127,7 @@ function makeMenu() { // credits to random
                     label: 'Log Out',
                     click: () => {
                         clearCache();
-                        win.loadURL('https://play.snowyfields.ca/');
+                        win.loadURL('https://snowyfields.ca/');
                     }
                 }
             ]
@@ -163,7 +163,7 @@ function makeMenu() { // credits to random
             label: 'Log Out',
             click: () => {
                 clearCache();
-                win.loadURL('https://play.snowyfields.ca/');
+                win.loadURL('https://snowyfields.ca/');
             }
         }));
     }
