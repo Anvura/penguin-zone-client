@@ -53,7 +53,7 @@ app.on('ready', () => {
 function createWindow() {
     win = new BrowserWindow
     ({
-        title: "Snowy Fields",
+        title: "Penguin Zone",
         webPreferences: {
             plugins: true,
             nodeIntegration: true
@@ -64,7 +64,7 @@ function createWindow() {
     makeMenu();
     activateRPC();
 	
-    win.loadURL('https://snowyfields.ca/');
+    win.loadURL('https://penguinzone.ca/');
     autoUpdater.checkForUpdatesAndNotify();
     Menu.setApplicationMenu(fsmenu);
 	
@@ -75,7 +75,7 @@ function createWindow() {
 
 // start of menubar part
 
-const aboutMessage = `Snowy Fields Client v${app.getVersion()}\nCreated by Random with much code provided by Allinol for use with Coastal Freeze.\nThe owner of Snowy Fields is Anvura.`;
+const aboutMessage = `Penguin Zone Client v${app.getVersion()}\nCreated by Random with much code provided by Allinol for use with Coastal Freeze and Snowy Fields.\nthe owner of Penguin Zone is Mjjrrb905.`;
 
 
 function activateRPC() { 
@@ -85,7 +85,7 @@ function activateRPC() {
   const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
-      details: `www.snowyfields.ca`, 
+      details: `www.penguinzone.ca`, 
       startTimestamp, 
       largeImageKey: `main-logo`
     });
@@ -97,14 +97,14 @@ function makeMenu() { // credits to random
     fsmenu = new Menu();
     if (process.platform == 'darwin') {
         fsmenu.append(new MenuItem({
-            label: "Snowy Fields",
+            label: "Penguin Zone",
             submenu: [{
                     label: 'About',
                     click: () => {
                         dialog.showMessageBox({
                             type: "info",
                             buttons: ["Ok"],
-                            title: "About Snowy Fields Client",
+                            title: "About Penguin Zone Client",
                             message: aboutMessage
                         });
                     }
@@ -128,7 +128,7 @@ function makeMenu() { // credits to random
                     label: 'Log Out',
                     click: () => {
                         clearCache();
-                        win.loadURL('https://snowyfields.ca/');
+                        win.loadURL('https://penguinzone.ca/');
                     }
                 }
             ]
@@ -140,7 +140,7 @@ function makeMenu() { // credits to random
                 dialog.showMessageBox({
                     type: "info",
                     buttons: ["Ok"],
-                    title: "About Snowy Fields Client",
+                    title: "About Penguin Zone Client",
                     message: aboutMessage
                 });
             }
@@ -164,7 +164,7 @@ function makeMenu() { // credits to random
             label: 'Log Out',
             click: () => {
                 clearCache();
-                win.loadURL('https://snowyfields.ca/');
+                win.loadURL('https://penguinzone.ca/');
             }
         }));
     }
