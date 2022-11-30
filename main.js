@@ -75,7 +75,7 @@ function createWindow() {
 
 // start of menubar part
 
-const aboutMessage = `Penguin Zone Client v${app.getVersion()}\nCreated by Random with much code provided by Allinol for use with Coastal Freeze and Snowy Fields.\nthe owner of Penguin Zone is Mjjrrb905.`;
+const aboutMessage = `Penguin Zone Client | v${app.getVersion()}\nThe Owner of Penguin Zone is Mjjrrb905.\n\nClient was created by Random with much code provided by Allinol for use with Coastal Freeze and Snowy Fields.`;
 
 
 function activateRPC() { 
