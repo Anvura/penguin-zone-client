@@ -79,7 +79,7 @@ const aboutMessage = `Penguin Zone Client v${app.getVersion()}\nCreated by Rando
 
 
 function activateRPC() { 
-  const clientId = '794276213144944681'; 
+  const clientId = '1047486604035498055'; 
   DiscordRPC.register(clientId);
   rpc = new DiscordRPC.Client({ transport: 'ipc' }); 
   const startTimestamp = new Date();
@@ -87,7 +87,13 @@ function activateRPC() {
     rpc.setActivity({
       details: `www.penguinzone.ca`, 
       startTimestamp, 
-      largeImageKey: `main-logo`
+      largeImageKey: `penguin_zone_logo`,
+      buttons: [
+          {
+              label: `Penguin Zone`,
+              url: `https://penguinzone.ca/`,
+          }
+      ]
     });
   });
   rpc.login({ clientId }).catch();
