@@ -88,10 +88,11 @@ function activateRPC() {
       details: `www.penguinzone.ca`, 
       startTimestamp, 
       largeImageKey: `penguin_zone_logo`,
+      largeImageText: `Penguin Zone Client | v${app.getVersion()}`,
       buttons: [
           {
-              label: `Penguin Zone`,
               url: `https://penguinzone.ca/`,
+              label: `Penguin Zone`
           }
       ]
     });
