@@ -132,7 +132,13 @@ function makeMenu() { // credits to random
                     }
                 },
                 {
-                    label: 'Log Out',
+                    label: 'Reload',
+                    click: () => {
+                        win.loadURL('https://play.penguinzone.ca/');
+                    }
+                },
+                {
+                    label: 'Clear Cache',
                     click: () => {
                         clearCache();
                         win.loadURL('https://penguinzone.ca/');

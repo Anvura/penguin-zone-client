@@ -1,6 +1,6 @@
 {
    "name": "penguinzoneclient",
-   "version": "2.0.1",
+   "version": "2.1.0",
    "description": "Desktop client for penguinzone.ca",
    "productName": "Penguin Zone",
    "main": "main.js",
