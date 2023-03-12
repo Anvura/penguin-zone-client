@@ -134,7 +134,7 @@ function makeMenu() { // credits to random
                 {
                     label: 'Reload',
                     click: () => {
-                        win.loadURL('https://play.penguinzone.ca/');
+                        reload();
                     }
                 },
                 {
@@ -174,13 +174,23 @@ function makeMenu() { // credits to random
             }
         }));
         fsmenu.append(new MenuItem({
-            label: 'Log Out',
+            label: 'Reload',
+            click: () => {
+                reload();
+            }
+        }));
+        fsmenu.append(new MenuItem({
+            label: 'Clear Cache',
             click: () => {
                 clearCache();
                 win.loadURL('https://penguinzone.ca/');
             }
         }));
     }
+}
+
+function reload() {
+    win.reload();
 }
 
 function clearCache() {
