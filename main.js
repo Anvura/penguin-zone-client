@@ -198,15 +198,37 @@ function updateDiscordRPC() {
 	DiscordRPC.register(clientId);
 	rpc = new DiscordRPC.Client({ transport: 'ipc' }); 
 	const startTimestamp = new Date();
+	rpc.on('ready', () => {
+		rpc.setActivity({
+			details: `Staring at the Home Page!`,
+			startTimestamp,
+			largeImageKey: 'penguin_zone_logo',
+			largeImageText: `Penguin Zone Client | v${app.getVersion()}`,
+			buttons: [
+				{
+					url: `https://penguinzone.ca/download`,
+					label: `Download Client`
+				},
+				{
+					url: `penguinzone://`,
+					label: `Launch Client`
+				}
+			]
+		});
+	})
 	rpc.login({ clientId }).catch();
 
 	win.webContents.on('did-navigate', (event, url) => {
 		let details = 'Staring at the Home Page!';
 
-		if (url === 'https://penguinzonetesting.github.io/events/') {
+		if (url === 'https://penguinzone.ca/') {
+			details = 'Staring at the Home Page!';
+		} else if (url === 'https://penguinzone.ca/events/') {
 			details = 'Checking out Upcoming Events';
-		} else if (url === 'https://penguinzonetesting.github.io/play/') {
+		} else if (url === 'https://play.penguinzone.ca/') {
 			details = 'Waddling around the World!';
+		} else {
+			details = 'https://penguinzone.ca/';
 		}
 
 		rpc.setActivity({
