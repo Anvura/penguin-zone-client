@@ -1,78 +1,87 @@
 {
-   "name": "penguinzoneclient",
-   "version": "2.1.0",
-   "description": "Desktop client for penguinzone.ca",
-   "productName": "Penguin Zone",
-   "main": "main.js",
-   "scripts": {
-      "start": "electron ."
-   },
-   "repository": "https://github.com/Anvura/penguin-zone-client",
-   "keywords": [
-      "snowy fields",
-      "cpps",
-      "club penguin",
-      "club penguin private server",
-      "anvura",
-      "penguin zone",
-      "pz",
-      "sf",
-      "mjjrrb905",
-      "mj"
-   ],
-   "build": {
-      "publish": [
-         {
-            "provider": "github",
-            "owner": "anvura",
-            "repo": "penguin-zone-client"
-         }
-      ],
-      "appId": "com.penguinzone.desktop",
-      "mac": {
-         "asar": false,
-         "category": "public.app-category.games"
-      },
-      "linux": {
-         "asar": false,
-         "target": [
-            {
-               "target": "deb",
-               "arch": [
-                  "x64",
-                  "ia32"
-               ]
-            },
-            {
-               "target": "AppImage",
-               "arch": [
-                  "x64",
-                  "ia32"
-               ]
-            }
-         ]
-      },
-      "win": {
-         "asar": false,
-         "target": [
-            {
-               "target": "nsis",
-               "arch": [
-                  "x64",
-                  "ia32"
-               ]
-            }
-         ]
+  "name": "penguin-zone-client",
+  "version": "2.1.0",
+  "description": "Desktop Client for Penguin Zone!",
+  "author": "Penguin Zone <business.anvurayt@gmail.com> (www.penguinzone.ca)",
+  "license": "CC0-1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": "https://github.com/Anvura/penguin-zone-client",
+  "keywords": [
+    "snowy fields",
+    "cpps",
+    "club penguin",
+    "club penguin private server",
+    "anvura",
+    "penguin zone",
+    "pz",
+    "sf",
+    "mjjrrb905",
+    "mj"
+  ],
+  "postinstall": "electron-builder install-app-deps",
+  "build": {
+    "appId": "com.penguinzone.desktop",
+    "productName": "Penguin Zone",
+    "protocols": {
+      "name": "Penguin Zone",
+      "schemes": [
+        "penguinzone"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "anvura",
+        "repo": "penguin-zone-client"
       }
-   },
-   "author": "Penguin Zone <business.anvurayt@gmail.com> (www.penguinzone.ca)",
-   "license": "CC0-1.0",
-   "devDependencies": {
-      "electron": "^8.1.1",
-      "electron-builder": "^22.9.1"
-   },
-   "dependencies": {
-      "electron-updater": "^4.3.2",
-      "discord-rpc": "^3.1.4"
-   }
+    ],
+    "mac": {
+      "asar": false,
+      "category": "public.app-category.games"
+    },
+    "linux": {
+      "asar": false,
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "asar": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "discord-rpc": "^3.2.0",
+    "electron-updater": "^5.3.0"
+  },
+  "devDependencies": {
+    "electron": "^8.1.1",
+    "electron-builder": "^22.9.1"
+  }
 }
