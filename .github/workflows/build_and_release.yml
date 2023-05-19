@@ -2,6 +2,9 @@ name: Build/release
 
 on: 
   push:
+    tags:
+      # Build on every tag in the form v1.2.3-something.4
+      - 'v*'
       
 jobs:
   release:
@@ -9,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
+        # os: [ macos-latest, ubuntu-latest, windows-latest ]
 
     steps:
       - name: Check out Git repository
@@ -18,7 +21,7 @@ jobs:
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 16
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1.6.0
@@ -30,3 +33,5 @@ jobs:
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+
+          max_attempts: 10
