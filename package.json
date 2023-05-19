@@ -36,14 +36,12 @@
     "mac": {
       "asar": false,
       "category": "public.app-category.games",
-      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}"
     },
     "linux": {
       "asar": false,
       "target": [
         {
           "target": "deb",
-          "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
           "arch": [
             "x64",
             "ia32"
@@ -51,7 +49,6 @@
         },
         {
           "target": "AppImage",
-          "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
           "arch": [
             "x64",
             "ia32"
@@ -64,7 +61,6 @@
       "target": [
         {
           "target": "nsis",
-          "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
           "arch": [
             "x64",
             "ia32"
