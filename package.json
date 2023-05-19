@@ -35,7 +35,7 @@
     },
     "mac": {
       "asar": false,
-      "category": "public.app-category.games",
+      "category": "public.app-category.games"
     },
     "linux": {
       "asar": false,
