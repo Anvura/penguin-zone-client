@@ -221,14 +221,18 @@ function updateDiscordRPC() {
 	win.webContents.on('did-navigate', (event, url) => {
 		let details = 'Staring at the Home Page!';
 
-		if (url === 'https://penguinzone.ca/') {
-			details = 'Staring at the Home Page!';
-		} else if (url === 'https://penguinzone.ca/events/') {
-			details = 'Checking out Upcoming Events';
-		} else if (url === 'https://play.penguinzone.ca/') {
-			details = 'Waddling around the World!';
-		} else {
-			details = 'https://penguinzone.ca/';
+		switch (url) {
+			case 'https://penguinzone.ca/':
+				details = 'Staring at the Home Page!';
+				break;
+			case 'https://penguinzone.ca/events/':
+				details = 'Checking out Upcoming Events!';
+				break;
+			case 'https://play.penguinzone.ca/':
+				details = 'Waddling around the World!';
+				break;
+			default:
+				details ='https://penguinzone.ca/';
 		}
 
 		rpc.setActivity({
